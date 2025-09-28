@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  email    String @unique
+  password String
+}
+
+model AboutData {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  about String
+}
+
+model PersonalData {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  headline   String
+  resumeLink String
+  photoUrl   String?
+}
+
+model ContactInfoData {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  type     String
+  value    String
+  photoUrl String
+  creationDate  DateTime @default(now())
+}
+
+model EducationData {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  institution String
+  degree      String
+  period      String
+  photoUrl    String
+  creationDate  DateTime @default(now())
+}
+
+model ExperienceData {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  company     String
+  role        String
+  period      String
+  description String
+  photoUrl    String
+  creationDate  DateTime @default(now())
+}
+
+model ProjectData {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  link        String
+  photoUrl    String
+  creationDate  DateTime @default(now())
+}
+
+model RolesData {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+}
+
+model SkillsData {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  photoUrl String
+  creationDate  DateTime @default(now())
+}
