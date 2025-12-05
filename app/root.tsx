@@ -24,7 +24,7 @@ export const links: LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap",
   },
-  { rel: "icon", href: "/profile-image.jpeg" },
+  { rel: "icon", href: "https://avatars.githubusercontent.com/u/113905269?s=88&v=4" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
